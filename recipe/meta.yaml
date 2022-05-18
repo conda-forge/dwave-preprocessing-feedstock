@@ -19,7 +19,7 @@ requirements:
   host:
     - cython >=0.29.21,<3.0
     - dimod ==0.11.0
-    - numpy >=1.21.0,<2.0.0
+    - numpy >=1.21.0,<2.0
     - pip
     - python
     - setuptools >=46.4.0
