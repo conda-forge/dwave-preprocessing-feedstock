@@ -1,5 +1,5 @@
 {% set name = "dwave-preprocessing" %}
-{% set version = "0.3.2" %}
+{% set version = "0.4.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,25 +7,25 @@ package:
 
 source:
   url: https://github.com/dwavesystems/dwave-preprocessing/archive/refs/tags/{{ version }}.tar.gz
-  sha256: 3e2b41620079fb1cef90eb52e1e120ddded58a1d1edd410ca671bb45893b86d4
+  sha256: 04ff8937b131af3520d4197f256c4ba68cad0783af131c57ce20083d3f36fad3
 
 build:
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 0
 
 requirements:
   build:
     - {{ compiler('cxx') }}
   host:
     - cython >=0.29.21,<3.0
-    - dimod >=0.10.9,<11
-    - numpy >=1.17.3,<2.0.0
+    - dimod ==0.11.0
+    - numpy >=1.20.0,<2.0.0
     - pip
     - python
     - setuptools >=46.4.0
     - wheel >=0.30.0
   run:
-    - dimod >=0.10.0,<0.11.0
+    - dimod >=0.11.0,<0.12.0
     - {{ pin_compatible('numpy') }}
     - python
 
