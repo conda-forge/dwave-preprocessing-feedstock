@@ -20,6 +20,7 @@ requirements:
     - cython                                 # [build_platform != target_platform]
     - numpy 1.20                             # [build_platform != target_platform and py<310]
     - numpy                                  # [build_platform != target_platform and py>=310]
+    - dimod ==0.11.1                         # [build_platform != target_platform]
     - {{ compiler('cxx') }}
   host:
     - cython >=0.29.21,<3.0
