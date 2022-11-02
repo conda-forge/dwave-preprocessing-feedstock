@@ -20,11 +20,11 @@ requirements:
     - cython                                 # [build_platform != target_platform]
     - numpy 1.20                             # [build_platform != target_platform and py<310]
     - numpy                                  # [build_platform != target_platform and py>=310]
-    - dimod ==0.11.1                         # [build_platform != target_platform]
+    - dimod >=0.12.0rc1,<0.13.0              # [build_platform != target_platform]
     - {{ compiler('cxx') }}
   host:
     - cython >=0.29.21,<3.0
-    - dimod ==0.11.1
+    - dimod >=0.12.0rc1,<0.13.0
     - numpy 1.20  # [py<310]
     - numpy       # [py>=310]
     - pip
@@ -32,7 +32,7 @@ requirements:
     - setuptools >=46.4.0
     - wheel >=0.30.0
   run:
-    - dimod >=0.11.0,<0.12.0
+    - dimod >=0.12.0rc1,<0.13.0
     - {{ pin_compatible('numpy') }}
     - python
 
