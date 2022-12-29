@@ -1,9 +1,5 @@
-BUILD:
-- aarch64-conda_cos7-linux-gnu
-cdt_arch:
-- aarch64
 cdt_name:
-- cos7
+- cos6
 channel_sources:
 - conda-forge
 channel_targets:
@@ -21,9 +17,11 @@ pin_run_as_build:
     min_pin: x.x
     max_pin: x.x
 python:
-- 3.8.* *_cpython
+- 3.9.* *_cpython
+spdlog:
+- '1.11'
 target_platform:
-- linux-aarch64
+- linux-64
 zip_keys:
 - - python
   - numpy
