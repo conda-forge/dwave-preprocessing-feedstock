@@ -31,6 +31,7 @@ requirements:
     - python
     - setuptools >=46.4.0
     - wheel >=0.30.0
+    - spdlog
   run:
     - dimod >=0.12.0rc1,<0.13.0
     - {{ pin_compatible('numpy') }}
