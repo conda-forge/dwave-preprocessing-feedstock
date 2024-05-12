@@ -1,5 +1,5 @@
 {% set name = "dwave-preprocessing" %}
-{% set version = "0.5.3" %}
+{% set version = "0.6.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/dwavesystems/dwave-preprocessing/archive/refs/tags/{{ version }}.tar.gz
-  sha256: 9b815782a0ed8ad219ee8097bd37b2781f0380d5b46bb9c8964ce8314f393610
+  sha256: e40711f410701c4d70389d2e9e0676f4e560558220f0697169df5676886a0513
 
 build:
   script: {{ PYTHON }} -m pip install . -vv
