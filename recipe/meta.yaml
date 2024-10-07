@@ -1,5 +1,5 @@
 {% set name = "dwave-preprocessing" %}
-{% set version = "0.5.3" %}
+{% set version = "0.6.7" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/dwavesystems/dwave-preprocessing/archive/refs/tags/{{ version }}.tar.gz
-  sha256: 9b815782a0ed8ad219ee8097bd37b2781f0380d5b46bb9c8964ce8314f393610
+  sha256: 89676e34694f83aa01a7655b5811ab5f6138736c7594f50fc89a322703bb5862
 
 build:
   script: {{ PYTHON }} -m pip install . -vv
@@ -18,21 +18,20 @@ requirements:
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - cython                                 # [build_platform != target_platform]
-    - numpy 1.20                             # [build_platform != target_platform and py<310]
-    - numpy                                  # [build_platform != target_platform and py>=310]
-    - dimod >=0.12.0rc1,<0.13.0              # [build_platform != target_platform]
+    - numpy                                  # [build_platform != target_platform]
+    - dimod >=0.12.17                        # [build_platform != target_platform]
     - {{ compiler('cxx') }}
+    - {{ stdlib("c") }}
   host:
-    - cython >=0.29.21,<3.0
-    - dimod >=0.12.0rc1,<0.13.0
-    - numpy 1.20  # [py<310]
-    - numpy       # [py>=310]
+    - cython >=3,<4
+    - dimod >=0.12.17
+    - numpy
     - pip
     - python
     - setuptools >=46.4.0
     - wheel >=0.30.0
   run:
-    - dimod >=0.12.0rc1,<0.13.0
+    - dimod >=0.12.6,<0.13.0
     - {{ pin_compatible('numpy') }}
     - python
 
